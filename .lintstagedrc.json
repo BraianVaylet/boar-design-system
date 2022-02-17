@@ -1,5 +1,5 @@
 {
-  "**/*.{js, jsx, ts, tsx, mdx}": [
+  "[src, test, stories, .storybook]/*.{js, jsx, ts, tsx, mdx}": [
     "eslint --cache --fix"
   ]
 }
