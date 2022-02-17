@@ -1,24 +1,63 @@
 import {ArgsTable, Meta, Story, Canvas} from '@storybook/addon-docs'
-import {Button, ButtonPropsTypes} from '../src/Button'
+import {Button} from '../src/Button'
 
 <Meta
-  title="MDX/Documentation/Button"
+  title="MDX/Components/Button"
   component={Button}  
 />
 
-export const Template: Story<ButtonPropsTypes> = args => (
+
+export const Template = args => (
   <Button {...args} />
 )
 
 # Button
 
-Documentation about Button component...
+This is a Button component documentation.
+<Canvas>
+  <Story
+    name="My Button"
+    args={{
+      children: 'My Button'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
 
-<Story
-  name="Default Button"
-  args={{
-    children: "I am in MDX"
-  }}
->
-  {Template.bind()}
-</Story>
+## Props
+
+<ArgsTable
+  story="My Button"
+/>
+
+## Variants
+
+### Primary Button
+
+<Canvas>
+  <Story
+    name="Primary Button"
+    args={{
+      children: 'Primary Button'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Secondary Button
+
+<Canvas>
+  <Story
+    name="Secondary Button"
+    args={{
+      variant: 'secondary',
+      children: 'Secondary Button'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
