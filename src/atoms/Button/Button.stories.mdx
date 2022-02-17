@@ -1,5 +1,5 @@
 import {ArgsTable, Meta, Story, Canvas} from '@storybook/addon-docs'
-import {Button} from '../src/Button'
+import {Button} from './Button'
 
 <Meta
   title="MDX/Components/Button"
@@ -18,7 +18,9 @@ This is a Button component documentation.
   <Story
     name="My Button"
     args={{
-      children: 'My Button'
+      children: 'My Button',
+      color: 'red',
+      backgroundColor: 'black'
     }}
   >
     {Template.bind({})}
@@ -52,7 +54,7 @@ This is a Button component documentation.
   <Story
     name="Secondary Button"
     args={{
-      variant: 'secondary',
+      variant: 'outline',
       children: 'Secondary Button'
     }}
   >
