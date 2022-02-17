@@ -1,5 +1,14 @@
 {
-  "{src, test, stories, .storybook}/*.{js, jsx, ts, tsx, mdx}": [
+  "src/*.{js, jsx, ts, tsx, mdx}": [
+    "eslint --cache --fix"
+  ],
+  "test/*.{js, jsx, ts, tsx, mdx}": [
+    "eslint --cache --fix"
+  ],
+  "stories/*.{js, jsx, ts, tsx, mdx}": [
+    "eslint --cache --fix"
+  ],
+  ".storybook/*.{js, jsx, ts, tsx, mdx}": [
     "eslint --cache --fix"
   ]
 }

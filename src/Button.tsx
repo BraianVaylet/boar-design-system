@@ -19,7 +19,7 @@ export const Button: FC<ButtonPropsTypes> = ({
       color: 'white',
       border: 'none',
       borderRadius: 100,
-      padding: 10,
+      padding: 10
     }}>
       {children}
     </button>
