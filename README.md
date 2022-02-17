@@ -1,3 +1,11 @@
+<p align="center" width="200">
+   <img align="center" width="100" src="https://raw.githubusercontent.com/BraianVaylet/butterfly-design-system/main/public/butterfly.png" />
+</p>
+
+# 🦋 Butterfly Design System
+
+---
+
 # TSDX React w/ Storybook User Guide
 
 Congrats! You just saved yourself hours of work by bootstrapping this project with TSDX. Let’s get you oriented with what’s here and how to use it.
