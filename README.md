@@ -1,8 +1,8 @@
 <p align="center" width="200">
-   <img align="center" width="100" src="https://raw.githubusercontent.com/BraianVaylet/butterfly-design-system/main/public/butterfly.png" />
+   <img align="center" width="100" src="https://raw.githubusercontent.com/BraianVaylet/butterfly-design-system/main/public/boar.png" />
 </p>
 
-# 🦋 Butterfly Design System
+# 🐗 Boar Design System
 
 ---
 
