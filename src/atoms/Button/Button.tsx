@@ -1,10 +1,8 @@
-import React, { FC, HTMLAttributes, ReactNode } from 'react'
+import React, { HTMLAttributes, ReactNode } from 'react'
 import styled from 'styled-components'
 
 export interface ButtonPropsTypes extends HTMLAttributes<HTMLButtonElement> {
-  /** Provider a 'content' for the button  */
   children: ReactNode,
-  /** Provider a 'variant' for the button  */
   variant?: 'solid' | 'outline' | 'ghost' | 'link',
   colorSchema?: 'brown' | 'red' | 'green' | 'blue' | 'yellow' | 'orange' | 'black' | 'white'
 }
@@ -19,7 +17,7 @@ const BaseButton = styled.button({
   }
 })
 
-const LinkButton = styled(BaseButton)((props: any) => ({
+const LinkButton = styled(BaseButton)<ButtonPropsTypes>((props: any) => ({
   borderColor: 'transparent',
   backgroundColor: 'transparent',
   color: props.colorSchema || props.backgroundColor || props.background,
@@ -31,14 +29,14 @@ const LinkButton = styled(BaseButton)((props: any) => ({
   ...props
 }))
 
-const SolidButton = styled(BaseButton)((props: any) => ({
+const SolidButton = styled(BaseButton)<ButtonPropsTypes>((props: any) => ({
   borderColor: props.colorSchema || props.backgroundColor || props.background,
   backgroundColor: props.colorSchema || props.backgroundColor || props.background,
   color: 'white',
   ...props
 }))
 
-const OutlineButton = styled(BaseButton)((props: any) => ({
+const OutlineButton = styled(BaseButton)<ButtonPropsTypes>((props: any) => ({
   border: '1px solid',
   borderColor: props.colorSchema || props.backgroundColor || props.background,
   background: 'transparent',
@@ -46,7 +44,7 @@ const OutlineButton = styled(BaseButton)((props: any) => ({
   ...props
 }))
 
-const GhostButton = styled(BaseButton)((props: any) => ({
+const GhostButton = styled(BaseButton)<ButtonPropsTypes>((props: any) => ({
   borderColor: 'none',
   backgroundColor: 'transparent',
   '&:hover': {
@@ -57,15 +55,15 @@ const GhostButton = styled(BaseButton)((props: any) => ({
   ...props
 }))
 
-const ButtonStyled = styled(BaseButton)((props: any) => ({ ...props }))
+const ButtonStyled = styled(BaseButton)<ButtonPropsTypes>((props: any) => ({ ...props }))
 
 /** A custom button component */
-export const Button: FC<ButtonPropsTypes> = ({
+export const Button = ({
   children,
   variant = 'solid',
   colorSchema = 'brown',
   ...props
-}) => {
+}: ButtonPropsTypes) => {
   if (variant === 'solid') {
     return (
       <SolidButton
