@@ -1,10 +1,11 @@
 import React, { HTMLAttributes, ReactNode } from 'react'
+import theme from '../../theme'
 import styled from 'styled-components'
 
 export interface ButtonPropsTypes extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode,
   variant?: 'solid' | 'outline' | 'ghost' | 'link',
-  colorSchema?: 'brown' | 'red' | 'green' | 'blue' | 'yellow' | 'orange' | 'black' | 'white'
+  colorScheme?: 'black' | 'white' | 'gray' | 'red' | 'orange' | 'yellow' | 'green' | 'teal' | 'blue' | 'cyan' | 'purple' | 'pink'
 }
 
 const BaseButton = styled.button({
@@ -20,7 +21,7 @@ const BaseButton = styled.button({
 const LinkButton = styled(BaseButton)<ButtonPropsTypes>((props: any) => ({
   borderColor: 'transparent',
   backgroundColor: 'transparent',
-  color: props.colorSchema || props.backgroundColor || props.background,
+  color: theme.colorScheme[props.colorScheme] || props.backgroundColor || props.background,
   '&:hover': {
     cursor: 'pointer',
     textDecoration: 'underline',
@@ -30,17 +31,17 @@ const LinkButton = styled(BaseButton)<ButtonPropsTypes>((props: any) => ({
 }))
 
 const SolidButton = styled(BaseButton)<ButtonPropsTypes>((props: any) => ({
-  borderColor: props.colorSchema || props.backgroundColor || props.background,
-  backgroundColor: props.colorSchema || props.backgroundColor || props.background,
-  color: 'white',
+  borderColor: theme.colorScheme[props.colorScheme] || props.backgroundColor || props.background,
+  backgroundColor: theme.colorScheme[props.colorScheme] || props.backgroundColor || props.background,
+  color: props.colorScheme === 'white' ? 'black' : 'white',
   ...props
 }))
 
 const OutlineButton = styled(BaseButton)<ButtonPropsTypes>((props: any) => ({
   border: '1px solid',
-  borderColor: props.colorSchema || props.backgroundColor || props.background,
+  borderColor: theme.colorScheme[props.colorScheme] || props.backgroundColor || props.background,
   background: 'transparent',
-  color: props.colorSchema || props.backgroundColor || props.background,
+  color: theme.colorScheme[props.colorScheme] || props.backgroundColor || props.background,
   ...props
 }))
 
@@ -48,8 +49,9 @@ const GhostButton = styled(BaseButton)<ButtonPropsTypes>((props: any) => ({
   borderColor: 'none',
   backgroundColor: 'transparent',
   '&:hover': {
-    backgroundColor: props.colorSchema || props.backgroundColor || props.background,
-    color: 'white',
+    backgroundColor: theme.colorScheme[props.colorScheme] || props.backgroundColor || props.background,
+    color: props.colorScheme === 'white' ? 'gray' : 'white',
+    transition: 'all .5s ease',
     opacity: 0.9
   },
   ...props
@@ -61,14 +63,14 @@ const ButtonStyled = styled(BaseButton)<ButtonPropsTypes>((props: any) => ({ ...
 export const Button = ({
   children,
   variant = 'solid',
-  colorSchema = 'brown',
+  colorScheme = 'orange',
   ...props
 }: ButtonPropsTypes) => {
   if (variant === 'solid') {
     return (
       <SolidButton
         variant={variant}
-        colorSchema={colorSchema}
+        colorScheme={colorScheme}
         {...props}
       >
         {children}
@@ -80,7 +82,7 @@ export const Button = ({
     return (
       <OutlineButton
         variant={variant}
-        colorSchema={colorSchema}
+        colorScheme={colorScheme}
         {...props}
       >
         {children}
@@ -92,7 +94,7 @@ export const Button = ({
     return (
       <GhostButton
         variant={variant}
-        colorSchema={colorSchema}
+        colorScheme={colorScheme}
         {...props}
       >
         {children}
@@ -104,7 +106,7 @@ export const Button = ({
     return (
       <LinkButton
         variant={variant}
-        colorSchema={colorSchema}
+        colorScheme={colorScheme}
         {...props}
       >
         {children}
@@ -115,7 +117,7 @@ export const Button = ({
   return (
     <ButtonStyled
       variant={variant}
-      colorSchema={colorSchema}
+      colorScheme={colorScheme}
       {...props}
     >
       {children}

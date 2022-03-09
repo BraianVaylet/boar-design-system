@@ -16,11 +16,10 @@ export const Template = args => (
 This is a Button component documentation.
 <Canvas>
   <Story
-    name="My Button"
+    name="Button"
     args={{
-      children: 'My Button',
-      variant: 'solid',
-      colorSchema: 'brown'
+      children: 'This is a Button',
+      variant: 'solid'
     }}
   >
     {Template.bind({})}
@@ -30,36 +29,64 @@ This is a Button component documentation.
 ## Props
 
 <ArgsTable
-  story="My Button"
+  story="Button"
 />
 
 ## Variants
 
-### Primary Button
+### Solid Button
 
 <Canvas>
   <Story
-    name="Primary Button"
+    name="Solid Button"
     args={{
-      children: 'Primary Button'
+      children: 'Solid Button',
+      variant: 'solid'      
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-### Secondary Button
+### Outline Button
 
 <Canvas>
   <Story
-    name="Secondary Button"
+    name="Outline Button"
     args={{
-      variant: 'outline',
-      children: 'Secondary Button'
+      children: 'Outline Button',
+      variant: 'outline'
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
+### Link Button
+
+<Canvas>
+  <Story
+    name="Link Button"
+    args={{
+      children: 'Link Button',
+      variant: 'link'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Ghost Button
+
+<Canvas>
+  <Story
+    name="Ghost Button"
+    args={{
+      children: 'Ghost Button',
+      variant: 'ghost'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
 
