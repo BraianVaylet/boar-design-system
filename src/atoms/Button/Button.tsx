@@ -2,6 +2,8 @@ import React, { HTMLAttributes, ReactNode } from 'react'
 import theme from '../../theme'
 import styled from 'styled-components'
 
+const { colorScheme, fonts, sizes, spaces, radius, zindex } = theme
+
 export interface ButtonPropsTypes extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode,
   variant?: 'solid' | 'outline' | 'ghost' | 'link',
@@ -9,19 +11,42 @@ export interface ButtonPropsTypes extends HTMLAttributes<HTMLButtonElement> {
 }
 
 const BaseButton = styled.button({
-  padding: '10px 20px',
-  borderRadius: 50,
-  borderStyle: 'none',
+  boxSizing: 'border-box',
+  width: sizes.max,
+  height: sizes.max,
+  padding: `${spaces[1.5]} ${spaces[2]}`,
+  margin: spaces[1],
+  borderRadius: radius.base,
+  border: `${spaces.px} solid transparent`,
+  fontSize: fonts.fontSizes.md,
+  lineHeights: fonts.lineHeights.normal,
+  fontWeights: fonts.fontWeights.normal,
+  letterSpacings: fonts.letterSpacings.normal,
+  fontFamily: fonts.fonts.body,
+  zIndex: zindex.base,
   '&:hover': {
     cursor: 'pointer',
     opacity: 0.9
+  },
+  '&:active': {
+    border: `${spaces.px} solid ${colorScheme.base}`,
+    boxShadow: `0 0 ${spaces[2]} ${colorScheme.base}`
+  },
+  '&:focus': {
+    border: `${spaces.px} solid ${colorScheme.base}`,
+    boxShadow: `0 0 ${spaces[2]} ${colorScheme.base}`
+  },
+  '&:target': {
+    border: `${spaces.px} solid ${colorScheme.base}`,
+    boxShadow: `0 0 ${spaces[2]} ${colorScheme.base}`
   }
+
 })
 
 const LinkButton = styled(BaseButton)<ButtonPropsTypes>((props: any) => ({
   borderColor: 'transparent',
   backgroundColor: 'transparent',
-  color: theme.colorScheme[props.colorScheme] || props.backgroundColor || props.background,
+  color: colorScheme[props.colorScheme] || props.backgroundColor || props.background,
   '&:hover': {
     cursor: 'pointer',
     textDecoration: 'underline',
@@ -31,17 +56,17 @@ const LinkButton = styled(BaseButton)<ButtonPropsTypes>((props: any) => ({
 }))
 
 const SolidButton = styled(BaseButton)<ButtonPropsTypes>((props: any) => ({
-  borderColor: theme.colorScheme[props.colorScheme] || props.backgroundColor || props.background,
-  backgroundColor: theme.colorScheme[props.colorScheme] || props.backgroundColor || props.background,
+  borderColor: colorScheme[props.colorScheme] || props.backgroundColor || props.background,
+  backgroundColor: colorScheme[props.colorScheme] || props.backgroundColor || props.background,
   color: props.colorScheme === 'white' ? 'black' : 'white',
   ...props
 }))
 
 const OutlineButton = styled(BaseButton)<ButtonPropsTypes>((props: any) => ({
   border: '1px solid',
-  borderColor: theme.colorScheme[props.colorScheme] || props.backgroundColor || props.background,
+  borderColor: colorScheme[props.colorScheme] || props.backgroundColor || props.background,
   background: 'transparent',
-  color: theme.colorScheme[props.colorScheme] || props.backgroundColor || props.background,
+  color: colorScheme[props.colorScheme] || props.backgroundColor || props.background,
   ...props
 }))
 
@@ -49,7 +74,7 @@ const GhostButton = styled(BaseButton)<ButtonPropsTypes>((props: any) => ({
   borderColor: 'none',
   backgroundColor: 'transparent',
   '&:hover': {
-    backgroundColor: theme.colorScheme[props.colorScheme] || props.backgroundColor || props.background,
+    backgroundColor: colorScheme[props.colorScheme] || props.backgroundColor || props.background,
     color: props.colorScheme === 'white' ? 'gray' : 'white',
     transition: 'all .5s ease',
     opacity: 0.9

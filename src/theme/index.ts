@@ -1,21 +1,21 @@
-import colors from './colors'
+import { zindex } from './zindex'
+import { radius } from './radius'
+import { sizes } from './sizes'
+import { spaces } from './spaces'
+import { breakpoints } from './breakpoints'
+import { fonts } from './fonts'
+import { colors } from './colors'
+import { colorScheme } from './colorScheme'
 
 const theme: any = {
+  breakpoints,
   colors,
-  colorScheme: {
-    black: colors.black,
-    white: colors.white,
-    gray: colors.gray[300],
-    red: colors.red[300],
-    orange: colors.orange[300],
-    yellow: colors.yellow[300],
-    green: colors.green[300],
-    teal: colors.teal[300],
-    blue: colors.blue[300],
-    cyan: colors.cyan[300],
-    purple: colors.purple[300],
-    pink: colors.pink[300]
-  }
+  colorScheme,
+  fonts,
+  spaces,
+  sizes,
+  radius,
+  zindex
 }
 
 export default theme
