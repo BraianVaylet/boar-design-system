@@ -4,6 +4,8 @@
 
 # 🐗 Boar Design System
 
+> [BETA] [https://www.npmjs.com/package/boar-design](https://www.npmjs.com/package/boar-design)
+
 ---
 
 # TSDX React w/ Storybook User Guide
