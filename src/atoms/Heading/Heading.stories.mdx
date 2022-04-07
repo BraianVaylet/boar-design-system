@@ -1,0 +1,119 @@
+import {ArgsTable, Meta, Story, Canvas} from '@storybook/addon-docs'
+import {Heading} from './Heading'
+
+<Meta
+  title="MDX/Components/Heading"
+  component={Heading}  
+/>
+
+
+export const Template = args => (
+  <Heading {...args} />
+)
+
+# Heading
+
+This is a Heading component documentation.
+<Canvas>
+  <Story
+    name="Heading"
+    args={{
+      children: 'This is a Heading',
+      as: 'h1'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable
+  story="Heading"
+/>
+
+## Variants
+
+### H1 Heading
+
+<Canvas>
+  <Story
+    name="H1 Heading"
+    args={{
+      children: 'H1 Heading Component',
+      as: 'h1'      
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### H2 Heading
+
+<Canvas>
+  <Story
+    name="H2 Heading"
+    args={{
+      children: 'H2 Heading Component',
+      as: 'h2'      
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### H3 Heading
+
+<Canvas>
+  <Story
+    name="H3 Heading"
+    args={{
+      children: 'H3 Heading Component',
+      as: 'h3'      
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### H4 Heading
+
+<Canvas>
+  <Story
+    name="H4 Heading"
+    args={{
+      children: 'H4 Heading Component',
+      as: 'h4'      
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### H5 Heading
+
+<Canvas>
+  <Story
+    name="H5 Heading"
+    args={{
+      children: 'H5 Heading Component',
+      as: 'h5'      
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### H6 Heading
+
+<Canvas>
+  <Story
+    name="H6 Heading"
+    args={{
+      children: 'H6 Heading Component',
+      as: 'h6'      
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
