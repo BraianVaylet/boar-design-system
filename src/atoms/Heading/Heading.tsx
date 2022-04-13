@@ -13,41 +13,41 @@ const baseStyles = {
   width: sizes.max,
   height: sizes.max,
   fontSize: fonts.fontSizes.md,
-  lineHeights: fonts.lineHeights.normal,
-  fontWeights: fonts.fontWeights.normal,
-  letterSpacings: fonts.letterSpacings.normal,
+  lineHeight: fonts.lineHeights.normal,
+  fontWeight: fonts.fontWeights.normal,
+  letterSpacing: fonts.letterSpacings.normal,
   fontFamily: fonts.fonts.body,
   zIndex: zindex.base
 }
 
-const BaseHeading1Text = styled.h1<any>(baseStyles)
-const BaseHeading2Text = styled.h2<any>(baseStyles)
-const BaseHeading3Text = styled.h3<any>(baseStyles)
-const BaseHeading4Text = styled.h4<any>(baseStyles)
-const BaseHeading5Text = styled.h5<any>(baseStyles)
-const BaseHeading6Text = styled.h6<any>(baseStyles)
+const BaseHeading1 = styled.h1<any>(baseStyles)
+const BaseHeading2 = styled.h2<any>(baseStyles)
+const BaseHeading3 = styled.h3<any>(baseStyles)
+const BaseHeading4 = styled.h4<any>(baseStyles)
+const BaseHeading5 = styled.h5<any>(baseStyles)
+const BaseHeading6 = styled.h6<any>(baseStyles)
 
-const TextHeading1Styled = styled(BaseHeading1Text)<HeadingPropsTypes>((props: any) => ({
+const TextHeading1Styled = styled(BaseHeading1)<HeadingPropsTypes>((props: any) => ({
   fontSize: fonts.fontSizes['4xl'],
   ...props
 }))
-const TextHeading2Styled = styled(BaseHeading2Text)<HeadingPropsTypes>((props: any) => ({
+const TextHeading2Styled = styled(BaseHeading2)<HeadingPropsTypes>((props: any) => ({
   fontSize: fonts.fontSizes['3xl'],
   ...props
 }))
-const TextHeading3Styled = styled(BaseHeading3Text)<HeadingPropsTypes>((props: any) => ({
+const TextHeading3Styled = styled(BaseHeading3)<HeadingPropsTypes>((props: any) => ({
   fontSize: fonts.fontSizes['2xl'],
   ...props
 }))
-const TextHeading4Styled = styled(BaseHeading4Text)<HeadingPropsTypes>((props: any) => ({
+const TextHeading4Styled = styled(BaseHeading4)<HeadingPropsTypes>((props: any) => ({
   fontSize: fonts.fontSizes.xl,
   ...props
 }))
-const TextHeading5Styled = styled(BaseHeading5Text)<HeadingPropsTypes>((props: any) => ({
+const TextHeading5Styled = styled(BaseHeading5)<HeadingPropsTypes>((props: any) => ({
   fontSize: fonts.fontSizes.lg,
   ...props
 }))
-const TextHeading6Styled = styled(BaseHeading6Text)<HeadingPropsTypes>((props: any) => ({
+const TextHeading6Styled = styled(BaseHeading6)<HeadingPropsTypes>((props: any) => ({
   fontSize: fonts.fontSizes.md,
   ...props
 }))

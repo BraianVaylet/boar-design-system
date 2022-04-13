@@ -13,9 +13,9 @@ const baseStyles = {
   width: sizes.max,
   height: sizes.max,
   fontSize: fonts.fontSizes.md,
-  lineHeights: fonts.lineHeights.normal,
-  fontWeights: fonts.fontWeights.normal,
-  letterSpacings: fonts.letterSpacings.normal,
+  lineHeight: fonts.lineHeights.normal,
+  fontWeight: fonts.fontWeights.normal,
+  letterSpacing: fonts.letterSpacings.normal,
   fontFamily: fonts.fonts.body,
   zIndex: zindex.base
 }

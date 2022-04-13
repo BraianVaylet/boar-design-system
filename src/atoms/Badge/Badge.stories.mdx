@@ -1,0 +1,99 @@
+import {ArgsTable, Meta, Story, Canvas} from '@storybook/addon-docs'
+import {Badge} from './Badge'
+
+<Meta
+  title="MDX/Components/Badge"
+  component={Badge}  
+/>
+
+
+export const Template = args => (
+  <Badge {...args} />
+)
+
+# Badge
+
+This is a Badge component documentation.
+<Canvas>
+  <Story
+    name="Badge"
+    args={{
+      children: 'NEW',
+      title: 'new',
+      variant: 'solid',
+      colorScheme: 'orange'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable
+  story="Badge"
+/>
+
+## Variants
+
+### Solid Badge
+
+<Canvas>
+  <Story
+    name="Solid Badge"
+    args={{
+      children: 'Solid',
+      title: 'solid',
+      variant: 'solid'      ,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Outline Badge
+
+<Canvas>
+  <Story
+    name="Outline Badge"
+    args={{
+      children: 'Outline',
+      title: 'outline',
+      variant: 'outline',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Link Badge
+
+<Canvas>
+  <Story
+    name="Link Badge"
+    args={{
+      children: 'Link',
+      title: 'link',
+      variant: 'link',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Ghost Badge
+
+<Canvas>
+  <Story
+    name="Ghost Badge"
+    args={{
+      children: 'Ghost',
+      title: 'ghost',
+      variant: 'ghost',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
