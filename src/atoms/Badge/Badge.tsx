@@ -5,10 +5,10 @@ import { colorSchemePropsTypes, variantPropsTypes } from '../../types'
 
 const { fonts, sizes, zindex, spaces, colorScheme } = theme
 
-export interface BadgePropsTypes extends HTMLAttributes<HTMLParagraphElement | HTMLSpanElement> {
+export interface BadgePropsTypes extends HTMLAttributes<HTMLSpanElement> {
   title?: string,
   children?: ReactNode,
-  variant: variantPropsTypes,
+  variant?: variantPropsTypes,
   colorScheme?: colorSchemePropsTypes
 }
 
@@ -25,7 +25,7 @@ const baseStyles = {
   zIndex: zindex.base
 }
 
-const BaseBadge = styled.span(baseStyles)
+const BaseBadge = styled.span<any>(baseStyles)
 
 const LinkBadge = styled(BaseBadge)<BadgePropsTypes>((props: any) => ({
   backgroundColor: 'transparent',
@@ -53,9 +53,7 @@ const GhostBadge = styled(BaseBadge)<BadgePropsTypes>((props: any) => ({
   ...props
 }))
 
-const BaseSpanBadge = styled.span<any>(BaseBadge)
-
-const BadgeStyled = styled(BaseSpanBadge)<BadgePropsTypes>((props: any) => ({ ...props }))
+const BadgeStyled = styled(BaseBadge)<BadgePropsTypes>((props: any) => ({ ...props }))
 
 export const Badge = ({
   title,

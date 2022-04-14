@@ -12,7 +12,6 @@ export interface ButtonPropsTypes extends HTMLAttributes<HTMLButtonElement> {
 }
 
 const baseStyles = {
-  boxSizing: 'border-box',
   width: sizes.max,
   height: sizes.max,
   padding: `${spaces[1.5]} ${spaces[2]}`,
@@ -43,7 +42,7 @@ const baseStyles = {
   }
 }
 
-const BaseButton = styled.button(baseStyles)
+const BaseButton = styled.button<any>(baseStyles)
 
 const LinkButton = styled(BaseButton)<ButtonPropsTypes>((props: any) => ({
   borderColor: 'transparent',

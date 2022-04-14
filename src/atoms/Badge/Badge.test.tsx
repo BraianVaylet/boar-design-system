@@ -6,7 +6,7 @@ import { Badge } from '.'
 describe('Badge', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')
-    ReactDOM.render(<Badge>Testing Badge</Badge>, div)
+    ReactDOM.render(<Badge title={'title'} />, div)
     ReactDOM.unmountComponentAtNode(div)
   })
 })
