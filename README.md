@@ -4,7 +4,17 @@
 
 # 🐗 Boar Design System
 
+Design System creado con tsdx y storybook para React. Se está desarrollando usando como inspiración la librería Chakra UI.
+
+## DEMO
+
+> [Storybook](https://boar-design-system.vercel.app/)
+
+## NPM
+
 > [BETA] [https://www.npmjs.com/package/boar-design](https://www.npmjs.com/package/boar-design)
+
+<br/><br/><br/>
 
 ---
 
