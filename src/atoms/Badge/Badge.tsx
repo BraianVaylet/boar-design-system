@@ -13,8 +13,8 @@ export interface BadgePropsTypes extends HTMLAttributes<HTMLSpanElement> {
 }
 
 const baseStyles = {
-  width: sizes.max,
-  height: sizes.max,
+  width: sizes.min,
+  height: sizes.min,
   fontSize: fonts.fontSizes.md,
   lineHeight: fonts.lineHeights[3],
   fontWeight: fonts.fontWeights.bold,

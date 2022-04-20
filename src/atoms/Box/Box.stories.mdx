@@ -1,0 +1,33 @@
+import {ArgsTable, Meta, Story, Canvas} from '@storybook/addon-docs'
+import {Box} from './Box'
+
+<Meta
+  title="MDX/Components/Box"
+  component={Box}  
+/>
+
+
+export const Template = args => (
+  <Box {...args} />
+)
+
+# Box
+
+This is a Box component documentation.
+<Canvas>
+  <Story
+    name="Box"
+    args={{
+      children: 'This is a Box',
+      backgroundColor: 'orange'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable
+  story="Box"
+/>

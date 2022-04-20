@@ -1,0 +1,33 @@
+import {ArgsTable, Meta, Story, Canvas} from '@storybook/addon-docs'
+import {Html} from './Html'
+
+<Meta
+  title="MDX/Components/Html"
+  component={Html}  
+/>
+
+
+export const Template = args => (
+  <Html {...args} />
+)
+
+# Html
+
+This is a Html component documentation.
+<Canvas>
+  <Story
+    name="Html"
+    args={{
+      html: '<p style="color: red">This is a red html</p>',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable
+  story="Html"
+/>
+
