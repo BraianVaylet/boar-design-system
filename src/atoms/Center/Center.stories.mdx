@@ -1,0 +1,34 @@
+import {ArgsTable, Meta, Story, Canvas} from '@storybook/addon-docs'
+import {Center} from './Center'
+
+<Meta
+  title="MDX/Components/Atoms/Center"
+  component={Center}  
+/>
+
+
+export const Template = args => (
+  <Center {...args} />
+)
+
+# Center
+
+This is a Center component documentation.
+<Canvas>
+  <Story
+    name="Center"
+    args={{
+      children: 'This is a Center component',
+      backgroundColor: 'orange',
+      width: '100%',      
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable
+  story="Center"
+/>

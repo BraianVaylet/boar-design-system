@@ -1,4 +1,7 @@
 export { Badge, BadgePropsTypes } from './atoms/Badge'
+export { Box, BoxPropsTypes } from './atoms/Box'
 export { Button, ButtonPropsTypes } from './atoms/Button'
+export { Center, CenterPropsTypes } from './atoms/Center'
 export { Heading, HeadingPropsTypes } from './atoms/Heading'
+export { Html, HtmlPropsTypes } from './atoms/Html'
 export { Text, TextPropsTypes } from './atoms/Text'
